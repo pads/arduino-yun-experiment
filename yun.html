@@ -13,11 +13,10 @@
 			</md-toolbar>
 			<md-content layout="row" class="md-padding md-default-theme">
 				<div flex ng-controller="temperatureController">
-					Temperature: <span ng-bind="temperature.temperature">0</span><span ng-bind="temperature.measure">C</span>
+					Temperature: <span ng-bind="temperature.temperature"></span> <span ng-bind="temperature.measure">C</span>
 				</div>
 				<div flex ng-controller="lightController">
-					Light: <span ng-bind="light.light">0</span><span ng-bind="light.measure">Lx</span>
-					<p ng-bind="foo">Foo!</p>
+					Light: <span ng-bind="light.light">0</span> <span ng-bind="light.measure">Lx</span>
 				</div>
 			</md-content>
 		</main>
