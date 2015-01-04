@@ -5,18 +5,40 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Arduino Yun Experiment</title>
 		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.6.1/angular-material.min.css">
+		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="css/thermometer.css">
+		<link rel="stylesheet" href="css/lightbulb.css">
 	</head>
 	<body layout="row">
 		<main layout="column" layout-fill tabindex="-1" role="main">
 			<md-toolbar layout="column" class="md-default-theme">
-				<h1 class="md-toolbar-tools">Arduino Yun Experiment</h1>
+				<h3>Arduino Yun Experiment</h3>
 			</md-toolbar>
 			<md-content layout="row" class="md-padding md-default-theme">
 				<div flex ng-controller="temperatureController">
-					Temperature: <span ng-bind="temperature.temperature"></span> <span ng-bind="temperature.measure">C</span>
+					<div class="thermometer">
+						<span class="thermometer-glass">
+      						<span class="thermometer-fill" ng-style="fillHeight"></span>
+						</span>
+						<div class="thermometer-bulb">
+							<span class="thermometer-red-circle"></span>
+							<span class="thermometer-filler">
+								<span></span>
+							</span>
+						</div>
+					</div>
+					<p>Temperature: <span ng-bind="temperature.temperature"></span> <span ng-bind="temperature.measure">C</span></p>
 				</div>
 				<div flex ng-controller="lightController">
-					Light: <span ng-bind="light.light">0</span> <span ng-bind="light.measure">Lx</span>
+					<div class="lightbulb">
+					  <div class="lightbulb-glow">
+					      <span class="lightbulb-light" ng-style="opacity"></span>
+					      <span class="lightbulb-base">
+					          <span></span>
+					      </span>
+					  </div>
+					</div>
+					<p>Light: <span ng-bind="light.light">0</span> <span ng-bind="light.measure">Lx</span></p>
 				</div>
 			</md-content>
 		</main>
